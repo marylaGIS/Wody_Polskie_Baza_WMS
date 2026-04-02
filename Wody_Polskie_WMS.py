@@ -25,11 +25,11 @@ from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 
-from PyQt5.QtCore import (QCoreApplication, QSettings, Qt, QUrl, QTranslator,
+from qgis.PyQt.QtCore import (QCoreApplication, QSettings, Qt, QUrl, QTranslator,
                           QVariant, qVersion)
-from PyQt5.QtGui import QDesktopServices
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import QAction, QShortcut
+from qgis.PyQt.QtGui import QDesktopServices
+from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QAction, QShortcut
 from qgis.core import *
 from qgis.gui import QgsMessageBar
 from qgis.core import QgsProject
@@ -45,10 +45,10 @@ import time
 from collections import OrderedDict
 from urllib.request import urlopen
 
-from PyQt5.QtCore import (QCoreApplication, QSettings, Qt, QTranslator,
+from qgis.PyQt.QtCore import (QCoreApplication, QSettings, Qt, QTranslator,
                           QVariant, qVersion)
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import QAction, QShortcut
+from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QAction, QShortcut
 from qgis.core import *
 from qgis.gui import QgsMessageBar
 from qgis.core import QgsLayerTreeGroup
@@ -1300,7 +1300,7 @@ class WodyPolskieWMS:
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
-        result = self.dlg.exec_()
+        result = self.dlg.exec()
         # See if OK was pressed
         if result:
             # Do something useful here - delete the line containing pass and
