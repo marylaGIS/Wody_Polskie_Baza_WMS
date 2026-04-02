@@ -21,43 +21,18 @@
  *                                                                         *
  ***************************************************************************/
 """
-from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
-from qgis.PyQt.QtGui import QIcon
+import os
+
+from qgis.PyQt.QtCore import QCoreApplication, QSettings, QTranslator, QUrl
+from qgis.PyQt.QtGui import QDesktopServices, QIcon
 from qgis.PyQt.QtWidgets import QAction
 
-from qgis.PyQt.QtCore import (QCoreApplication, QSettings, Qt, QUrl, QTranslator,
-                          QVariant, qVersion)
-from qgis.PyQt.QtGui import QDesktopServices
-from qgis.PyQt.QtGui import *
-from qgis.PyQt.QtWidgets import QAction, QShortcut
-from qgis.core import *
-from qgis.gui import QgsMessageBar
-from qgis.core import QgsProject
-from qgis.core import (QgsCoordinateReferenceSystem, QgsCoordinateTransform,
-                       QgsCoordinateTransformContext, QgsMapLayerProxyModel,
-                       QgsProject)
-import json
-import locale
-import operator
-import os
-import sys
-import time
-from collections import OrderedDict
-from urllib.request import urlopen
-
-from qgis.PyQt.QtCore import (QCoreApplication, QSettings, Qt, QTranslator,
-                          QVariant, qVersion)
-from qgis.PyQt.QtGui import *
-from qgis.PyQt.QtWidgets import QAction, QShortcut
-from qgis.core import *
-from qgis.gui import QgsMessageBar
-from qgis.core import QgsLayerTreeGroup
+from qgis.core import QgsProject, QgsRasterLayer
 
 # Initialize Qt resources from file resources.py
 from .resources import *
 # Import the code for the dialog
 from .Wody_Polskie_WMS_dialog import WodyPolskieWMSDialog
-import os.path
 
 from .listy_uslug import *
 
