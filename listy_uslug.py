@@ -1,5 +1,34 @@
 # Listy usług z warstwami
 
+mphp10k = [
+    ["26", "Sekcje mapy", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["27", "Nazwy cieków'", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["28", "Nazwy jezior", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["24", "Węzły na działach wodnych", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["25", "Węzły na ciekach wyróżnionych", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["0", "Działy wodne", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["1", "Zlewnie poziomu 1", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["2", "Zlewnie poziomu 2", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["3", "Zlewnie poziomu 3", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["4", "Zlewnie poziomu 4", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["5", "Zlewnie poziomu 5", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["6", "Zlewnie poziomu 6", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["7", "Zlewnie poziomu 7", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["8", "Zlewnie poziomu 8", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["9", "Zlewnie poziomu 9", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["10", "Zlewnie poziomu 10", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["11", "Zlewnie poziomu 11", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["12", "Zlewnie poziomu 12", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["13", "Zlewnie poziomu 13", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["14", "Zlewnie poziomu 14", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["15", "Zlewnie elementarne", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["16", "Cieki", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["19", "Odcinki cieków (skala od 75k)", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["20", "Cieki szerokie (skala od 75k)", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["21", "Jeziora", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+    ["23", "Morza i zatoki", "https://wody.isok.gov.pl/gpservices/KZGW/ISOK_MPHP/MapServer/WMSServer?"],
+]
+
 PGWWP = [
     ["0", "PGWWP-Nadzory Wodne", "https://wody.isok.gov.pl/gpservices/KZGW2/REG_ISOK_RZGW/MapServer/WMSServer?"],
     ["1", "PGWWP-Zarządy Zlewni", "https://wody.isok.gov.pl/gpservices/KZGW2/REG_ISOK_RZGW/MapServer/WMSServer?"],
