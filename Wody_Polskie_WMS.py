@@ -48,8 +48,7 @@ class WodyPolskieWMS:
         :type iface: QgsInterface
         """
         self.project = QgsProject.instance()
-        self.wms_mphp_layer = None
-        
+
         # Save reference to the QGIS interface
         self.iface = iface
         # initialize plugin directory
@@ -73,9 +72,8 @@ class WodyPolskieWMS:
         # Check if plugin was started the first time in current QGIS session
         # Must be set in initGui() to survive plugin reloads
         self.first_start = None
-        self.project = QgsProject.instance().layerTreeRoot().children()
-       
         self.dlg = None
+
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
         """Get the translation for a string using Qt translation API.
@@ -90,7 +88,6 @@ class WodyPolskieWMS:
         """
         # noinspection PyTypeChecker,PyArgumentList,PyCallByClass
         return QCoreApplication.translate('WodyPolskieWMS', message)
-
 
     def add_action(
         self,
@@ -179,7 +176,6 @@ class WodyPolskieWMS:
         # will be set False in run()
         self.first_start = True
 
-
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
         for action in self.actions:
@@ -188,51 +184,49 @@ class WodyPolskieWMS:
                 action)
             self.iface.removeToolBarIcon(action)
 
-    def run(self):       
+    def run(self):
         """Run method that performs all the real work"""
-        
+
         # Create the dialog with elements (after translation) and keep reference
         # Only create GUI ONCE in callback, so that it will only load when the plugin is started
         if self.first_start == True:
-        
+
             self.first_start = False
             self.dlg = WodyPolskieWMSDialog()
-            #MPHP10k - wywołanie funkcji przycisków
-            self.dlg.pbMPHP.clicked.connect(lambda: self.add_wms(mphp10k, "MPHP10k"))
 
-            #Granice PGWWP - wywołanie funkcji przycisku
-            #self.dlg.pbPGWWP.clicked.connect(self.add_group_pgwwp)
+            #MPHP10k
+            self.dlg.pbMPHP.clicked.connect(lambda: self.add_wms(mphp10k, "MPHP10k"))
+            #Granice PGWWP
             self.dlg.pbPGWWP.clicked.connect(lambda: self.add_wms(PGWWP, "PGWWP"))
-            #aPGW - wywołanie funkcji przycisków
-            #self.dlg.pbaPGW.clicked.connect(self.add_group_apgw)
+            #aPGW
             self.dlg.pbaPGW.clicked.connect(lambda: self.add_wms(aPGW, "aPGW"))
-            #2aPGW - wywołanie funkcji przycisków
+            #2aPGW
             self.dlg.pb2aPGW.clicked.connect(lambda: self.add_wms(aPGW2, "IIaPGW"))            
-            #WORP1 - od morza - wywołanie funkcji przycisku
+            #WORP1 - od morza
             self.dlg.pbWORP1.clicked.connect(lambda: self.add_wms(worp1, "WORP-ONNP-od morza"))
-            #WORP2 - rzeczne - wywołanie funkcji przycisków
+            #WORP2 - rzeczne
             self.dlg.pbWORP2.clicked.connect(lambda: self.add_wms(worp2, "WORP-ONNP-rzeczne"))
-            #WORP3 - zniszczenie budowli piętrzących - wywołanie funkcji przycisku
+            #WORP3 - zniszczenie budowli piętrzących
             self.dlg.pbWORP3.clicked.connect(lambda: self.add_wms(worp3, "WORP-ONNP-zniszczenie budowli piętrzących"))
-            #WORP4 - Powodzie historyczne, powodzie prawdopodobne - wywołanie funkcji przycisku
+            #WORP4 - Powodzie historyczne, powodzie prawdopodobne
             self.dlg.pbWORP4.clicked.connect(lambda: self.add_wms(worp4, "WORP-powodzie historyczne, prawdopodobne"))
-            #MZP1 - MZP z głębokością wody 0,2%, raz na 500 lat dla powodzi rzecznych oraz od strony morza - wywołanie funkcji przyciskuw 
+            #MZP1 - MZP z głębokością wody 0,2%, raz na 500 lat dla powodzi rzecznych oraz od strony morzaw 
             self.dlg.pbMZP1.clicked.connect(lambda: self.add_wms(mzp1, "MZP z głębokością wody-0,2%(raz na 500 lat)"))
-            #MZP2 - MZP z głębokością wody 1%, raz na 100 lat dla powodzi rzecznych oraz od strony morza - wywołanie funkcji przycisków 
+            #MZP2 - MZP z głębokością wody 1%, raz na 100 lat dla powodzi rzecznych oraz od strony morza 
             self.dlg.pbMZP2.clicked.connect(lambda: self.add_wms(mzp2, "MZP z głębokością wody-1%(raz na 100 lat)"))
-            #MZP3 - MZP z głębokością wody 10%, raz na 10 lat - wywołanie funkcji przycisków 
+            #MZP3 - MZP z głębokością wody 10%, raz na 10 lat 
             self.dlg.pbMZP3.clicked.connect(lambda: self.add_wms(mzp3, "MZP z głębokością wody-10%(raz na 10 lat)"))
-            #MZP4 - MZP z prędkością przepływu wody 0,2%, raz na 500 lat - wywołanie funkcji przycisków 
+            #MZP4 - MZP z prędkością przepływu wody 0,2%, raz na 500 lat 
             self.dlg.pbMZP4.clicked.connect(lambda: self.add_wms(mzp4, "MZP z prędkością wody-0,2%(raz na 500 lat)"))
-            #MZP5 - MZP z prędkością przepływu wody 1%, raz na 100 lat - wywołanie funkcji przycisków 
+            #MZP5 - MZP z prędkością przepływu wody 1%, raz na 100 lat 
             self.dlg.pbMZP5.clicked.connect(lambda: self.add_wms(mzp5, "MZP z prędkością wody-1%(raz na 100 lat)"))
-            #MZP6 - MZP z prędkością przepływu wody 10%, raz na 10 lat - wywołanie funkcji przycisków 
+            #MZP6 - MZP z prędkością przepływu wody 10%, raz na 10 lat 
             self.dlg.pbMZP6.clicked.connect(lambda: self.add_wms(mzp6, "MZP z prędkością wody-10%(raz na 10 lat)"))
-            #MZP7 - MZP - całkowite zniszczenie wału przeciwpowodziowego - wywołanie funkcji przycisków 
+            #MZP7 - MZP - całkowite zniszczenie wału przeciwpowodziowego 
             self.dlg.pbMZP7.clicked.connect(lambda: self.add_wms(mzp7, "MZP-zniszczenie wału przeciwpowodziowego"))
-            #MZP8 - MZP - zniszczenie lub uszkodzenie budowli piętrzącej - wywołanie funkcji przycisków 
+            #MZP8 - MZP - zniszczenie lub uszkodzenie budowli piętrzącej 
             self.dlg.pbMZP8.clicked.connect(lambda: self.add_wms(mzp8, "MZP-zniszczenie lub uszkodzenie budowli piętrzącej"))
-            #MZP9 - MZP od strony morza - całkowite zniszczenie wału przeciwsztormowego - wywołanie funkcji przycisków 
+            #MZP9 - MZP od strony morza - całkowite zniszczenie wału przeciwsztormowego 
             self.dlg.pbMZP9.clicked.connect(lambda: self.add_wms(mzp9, "MZP od strony morza-całkowite zniszczenie wału przeciwsztormowego"))
             #MZP10 - MZP - Obszary szczególnego zagrożenia powodzią
             self.dlg.pbMZP10.clicked.connect(lambda: self.add_wms(mzp10, "MZP-Obszary szczególnego zagrożenia powodzią"))
@@ -266,9 +260,9 @@ class WodyPolskieWMS:
             self.dlg.pbPZRP.clicked.connect(lambda: self.add_wms(pzrp, "PZRP"))
             #PPSS
             self.dlg.pbPPSS.clicked.connect(lambda: self.add_wms(ppss, "PPSS"))
-            
+
             #Pobieranie danych
-            
+
             #Pobierz geobazę IIaPGW
             self.dlg.pb2aPGW_dane.clicked.connect(lambda: self.open_url("https://dane.gov.pl/pl/dataset/599,baza-danych-przestrzennych-aktualizacji-planow-gospodarowania-wodami/resource/53330/table"))
             #Pobierz geobazę granice PGWWP
@@ -304,7 +298,6 @@ class WodyPolskieWMS:
             #Pobierz SHP MZP - Obszary zagrożenia powodziowego w przypadku zniszczenia wału przeciwsztormowego
             self.dlg.pbOZP_ZWPS_dane.clicked.connect(lambda: self.open_url("https://dane.gov.pl/pl/dataset/2178,mapa-zagrozenia-powodziowego-mzp/resource/42544"))
 
-            
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
@@ -314,30 +307,21 @@ class WodyPolskieWMS:
             # Do something useful here - delete the line containing pass and
             # substitute with your code.
             pass
-            
+
     def open_url(self, url):
-            QDesktopServices.openUrl(QUrl(url))
-            
-            
-    def add_group_apgw(self):
-            global root
-            root = QgsProject.instance().layerTreeRoot()
-            global aPGW
-            aPGW = root.addGroup("aPGW")
+        QDesktopServices.openUrl(QUrl(url))
 
-
-            
     def add_wms(self, usluga, nazwa):
-            root = QgsProject.instance().layerTreeRoot()
-            grupa = root.addGroup(nazwa)
-            for warstwa in usluga:
-                    url = ("contextualWMSLegend=0&"
-                            "crs=EPSG:2180&"
-                            "dpiMode=7&"
-                            "format=image/png&"
-                            "layers="+ warstwa[0]+"&"
-                            "styles=&"
-                            "version=1.3.0&"
-                            "url="+warstwa[2])
-                    layer = QgsRasterLayer(url, warstwa[1], 'wms')
-                    grupa.addLayer(QgsProject.instance().addMapLayer(layer, False))
+        root = QgsProject.instance().layerTreeRoot()
+        grupa = root.addGroup(nazwa)
+        for warstwa in usluga:
+            url = ("contextualWMSLegend=0&"
+                    "crs=EPSG:2180&"
+                    "dpiMode=7&"
+                    "format=image/png&"
+                    "layers="+ warstwa[0]+"&"
+                    "styles=&"
+                    "version=1.3.0&"
+                    "url="+warstwa[2])
+            layer = QgsRasterLayer(url, warstwa[1], 'wms')
+            grupa.addLayer(QgsProject.instance().addMapLayer(layer, False))
