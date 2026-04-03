@@ -329,7 +329,6 @@ class WodyPolskieWMS:
             
     def add_wms(self, usluga, nazwa):
             root = QgsProject.instance().layerTreeRoot()
-            global grupa
             grupa = root.addGroup(nazwa)
             for warstwa in usluga:
                     url = ("contextualWMSLegend=0&"
@@ -341,9 +340,4 @@ class WodyPolskieWMS:
                             "version=1.3.0&"
                             "url="+warstwa[2])
                     layer = QgsRasterLayer(url, warstwa[1], 'wms')
-                    layer.setCustomProperty("PGWWP", "wms_pgwwp_layer")
-                    self.wms_pgwwp_layer = layer
-                    grupa.addLayer(QgsProject.instance().addMapLayer(self.wms_pgwwp_layer, False))
-                    #aPGW.addLayer(self.wms_pgwwp_layer)
-                    #PGWWP.addLayer(self.wms_pgwwp_layer)
-                    self.dlg.pbPGWWP.setEnabled(True)
+                    grupa.addLayer(QgsProject.instance().addMapLayer(layer, False))
