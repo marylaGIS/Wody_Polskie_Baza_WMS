@@ -201,7 +201,7 @@ class WodyPolskieWMS:
             #aPGW
             self.dlg.pbaPGW.clicked.connect(lambda: self.add_wms(aPGW, "aPGW"))
             #2aPGW
-            self.dlg.pb2aPGW.clicked.connect(lambda: self.add_wms(aPGW2, "IIaPGW"))            
+            self.dlg.pb2aPGW.clicked.connect(lambda: self.add_wms(aPGW2, "IIaPGW"))
             #WORP1 - od morza
             self.dlg.pbWORP1.clicked.connect(lambda: self.add_wms(worp1, "WORP-ONNP-od morza"))
             #WORP2 - rzeczne
@@ -210,23 +210,23 @@ class WodyPolskieWMS:
             self.dlg.pbWORP3.clicked.connect(lambda: self.add_wms(worp3, "WORP-ONNP-zniszczenie budowli piętrzących"))
             #WORP4 - Powodzie historyczne, powodzie prawdopodobne
             self.dlg.pbWORP4.clicked.connect(lambda: self.add_wms(worp4, "WORP-powodzie historyczne, prawdopodobne"))
-            #MZP1 - MZP z głębokością wody 0,2%, raz na 500 lat dla powodzi rzecznych oraz od strony morzaw 
+            #MZP1 - MZP z głębokością wody 0,2%, raz na 500 lat dla powodzi rzecznych oraz od strony morzaw
             self.dlg.pbMZP1.clicked.connect(lambda: self.add_wms(mzp1, "MZP z głębokością wody-0,2%(raz na 500 lat)"))
-            #MZP2 - MZP z głębokością wody 1%, raz na 100 lat dla powodzi rzecznych oraz od strony morza 
+            #MZP2 - MZP z głębokością wody 1%, raz na 100 lat dla powodzi rzecznych oraz od strony morza
             self.dlg.pbMZP2.clicked.connect(lambda: self.add_wms(mzp2, "MZP z głębokością wody-1%(raz na 100 lat)"))
-            #MZP3 - MZP z głębokością wody 10%, raz na 10 lat 
+            #MZP3 - MZP z głębokością wody 10%, raz na 10 lat
             self.dlg.pbMZP3.clicked.connect(lambda: self.add_wms(mzp3, "MZP z głębokością wody-10%(raz na 10 lat)"))
-            #MZP4 - MZP z prędkością przepływu wody 0,2%, raz na 500 lat 
+            #MZP4 - MZP z prędkością przepływu wody 0,2%, raz na 500 lat
             self.dlg.pbMZP4.clicked.connect(lambda: self.add_wms(mzp4, "MZP z prędkością wody-0,2%(raz na 500 lat)"))
-            #MZP5 - MZP z prędkością przepływu wody 1%, raz na 100 lat 
+            #MZP5 - MZP z prędkością przepływu wody 1%, raz na 100 lat
             self.dlg.pbMZP5.clicked.connect(lambda: self.add_wms(mzp5, "MZP z prędkością wody-1%(raz na 100 lat)"))
-            #MZP6 - MZP z prędkością przepływu wody 10%, raz na 10 lat 
+            #MZP6 - MZP z prędkością przepływu wody 10%, raz na 10 lat
             self.dlg.pbMZP6.clicked.connect(lambda: self.add_wms(mzp6, "MZP z prędkością wody-10%(raz na 10 lat)"))
-            #MZP7 - MZP - całkowite zniszczenie wału przeciwpowodziowego 
+            #MZP7 - MZP - całkowite zniszczenie wału przeciwpowodziowego
             self.dlg.pbMZP7.clicked.connect(lambda: self.add_wms(mzp7, "MZP-zniszczenie wału przeciwpowodziowego"))
-            #MZP8 - MZP - zniszczenie lub uszkodzenie budowli piętrzącej 
+            #MZP8 - MZP - zniszczenie lub uszkodzenie budowli piętrzącej
             self.dlg.pbMZP8.clicked.connect(lambda: self.add_wms(mzp8, "MZP-zniszczenie lub uszkodzenie budowli piętrzącej"))
-            #MZP9 - MZP od strony morza - całkowite zniszczenie wału przeciwsztormowego 
+            #MZP9 - MZP od strony morza - całkowite zniszczenie wału przeciwsztormowego
             self.dlg.pbMZP9.clicked.connect(lambda: self.add_wms(mzp9, "MZP od strony morza-całkowite zniszczenie wału przeciwsztormowego"))
             #MZP10 - MZP - Obszary szczególnego zagrożenia powodzią
             self.dlg.pbMZP10.clicked.connect(lambda: self.add_wms(mzp10, "MZP-Obszary szczególnego zagrożenia powodzią"))
